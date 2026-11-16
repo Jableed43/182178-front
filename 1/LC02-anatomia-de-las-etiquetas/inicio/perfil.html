@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Anatomía de una etiqueta</title>
+    <!-- Estilo mínimo SOLO para ver los bordes de bloque y en línea (CSS se ve en la clase 5) -->
+    <style>
+        p, div { border: 2px solid tomato; }
+        span, a { border: 2px solid royalblue; }
+    </style>
+</head>
+<body>
+    <!-- Etiqueta = <apertura> + contenido + </cierre> -->
+    <h1>Ana Pérez</h1>
+
+    <!-- Elemento vacío (sin cierre): la imagen. src = ruta RELATIVA; alt = texto alternativo -->
+<!-- TODO (Live Coding): Insertá la imagen img/avatar.svg con su atributo alt -->
+<!-- TODO (Live Coding): PASO 3 - copiá esa misma img pero con una ruta que NO exista
+     (por ejemplo img/avatar-que-no-existe.svg) y mirá que aparece el texto del alt.
+     En la consola (F12) vas a ver un 404. Eso es para qué sirve el alt. -->
+
+    <!-- Elementos de BLOQUE: ocupan todo el ancho, empiezan en una línea nueva -->
+    <p>Soy estudiante de la diplomatura y me gusta el <span>desarrollo web</span>.</p>
+    <div>Un <code>div</code> es un bloque sin significado propio.</div>
+
+    <!-- Elementos EN LÍNEA: solo ocupan lo que miden, no cortan la línea -->
+    <p>
+        Mis sitios favoritos:
+<!-- TODO (Live Coding): Escribí dos enlaces: uno con ruta absoluta (https://...) con target="_blank" y otro con ruta relativa a index.html -->
+    </p>
+
+    <!-- Más elementos vacíos -->
+    <p>Primera línea<br>Segunda línea (salto con br)</p>
+    <hr>
+
+    <!--
+        Regla de oro: un elemento en línea puede ir dentro de uno de bloque,
+        pero NUNCA un bloque (div, h1) dentro de uno en línea (a, span).
+    -->
+</body>
+</html>

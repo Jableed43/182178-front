@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Anatomía de una etiqueta</title>
+    <!-- Estilo mínimo SOLO para ver los bordes de bloque y en línea (CSS se ve en la clase 5) -->
+    <style>
+        p, div { border: 2px solid tomato; }
+        span, a { border: 2px solid royalblue; }
+    </style>
+</head>
+<body>
+    <!-- Etiqueta = <apertura> + contenido + </cierre> -->
+    <h1>Ana Pérez</h1>
+
+    <!-- Elemento vacío (sin cierre): la imagen. src = ruta RELATIVA; alt = texto alternativo -->
+    <img src="img/avatar.svg" alt="Avatar de Ana Pérez" width="120">
+
+    <!--
+        PASO 3 - Rompé la ruta a propósito.
+        Descomentá la línea de abajo: el archivo NO existe, así que el navegador
+        no dibuja nada y en su lugar muestra el texto del alt. Eso es para qué
+        sirve el alt. En la consola (F12) aparece un 404.
+    -->
+    <!-- <img src="img/avatar-que-no-existe.svg" alt="Esta imagen no se va a ver" width="120"> -->
+
+    <!-- Elementos de BLOQUE: ocupan todo el ancho, empiezan en una línea nueva -->
+    <p>Soy estudiante de la diplomatura y me gusta el <span>desarrollo web</span>.</p>
+    <div>Un <code>div</code> es un bloque sin significado propio.</div>
+
+    <!-- Elementos EN LÍNEA: solo ocupan lo que miden, no cortan la línea -->
+    <p>
+        Mis sitios favoritos:
+        <a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener">MDN</a>,
+        <a href="index.html">mi página de inicio</a>.
+    </p>
+
+    <!-- Más elementos vacíos -->
+    <p>Primera línea<br>Segunda línea (salto con br)</p>
+    <hr>
+
+    <!--
+        Regla de oro: un elemento en línea puede ir dentro de uno de bloque,
+        pero NUNCA un bloque (div, h1) dentro de uno en línea (a, span).
+    -->
+</body>
+</html>
