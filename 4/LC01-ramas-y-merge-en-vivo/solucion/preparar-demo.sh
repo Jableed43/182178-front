@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
-# Prepara el repositorio de práctica para la clase de ramas. Se puede repetir las veces que haga falta.
+# Deja la carpeta demo-ramas en su estado de partida. Se puede repetir las veces que haga falta.
 set -e
 DEMO="demo-ramas"
-rm -rf "$DEMO" && mkdir "$DEMO" && cd "$DEMO"
-git init -q -b main
-git config user.name "Demo"
-git config user.email "demo@example.com"
-# En Windows, sin esto Git avisa "LF will be replaced by CRLF" y tapa la salida
-git config core.autocrlf false
+mkdir -p "$DEMO"
 
-cat > index.html <<'HTML'
+# IMPORTANTE: demo-ramas vive DENTRO del repositorio de la clase. Si queda con un
+# .git propio adentro, el repositorio de arriba la guarda como un puntero vacío
+# (gitlink) y su contenido nunca sube a GitHub: en la web se ve una carpeta gris
+# que no se puede abrir. Por eso el script la devuelve a carpeta común.
+rm -rf "$DEMO/.git"
+find "$DEMO" -mindepth 1 -maxdepth 1 ! -name index.html -exec rm -rf {} +
+
+cat > "$DEMO/index.html" <<'HTML'
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,5 +24,4 @@ cat > index.html <<'HTML'
 </html>
 HTML
 
-git add . && git commit -q -m "chore: initial commit"
-echo "Listo: entrá a la carpeta $DEMO y seguí el guion-comandos.md"
+echo "Listo: entrá con  cd $DEMO  y arrancá por el paso 1 del guion-comandos.md"

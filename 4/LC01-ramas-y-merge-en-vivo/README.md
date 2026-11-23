@@ -5,7 +5,8 @@
 
 ## Pasos
 
-1. Corré `bash preparar-demo.sh`: crea `demo-ramas` con un primer commit en `main`.
+1. Corré `bash preparar-demo.sh`: deja `demo-ramas` con su `index.html` de partida. Entrá y hacé
+   `git init -b main` + el primer commit (repaso de la clase 2).
 2. Creá la rama `feature/login` con `git switch -c` y agregá `login.html` con un commit.
 3. Volvé a `main` con `git switch main` y comprobá que `login.html` no está.
 4. Fusioná con `git merge feature/login` y mirá el árbol con `git log --oneline --graph --all`.
@@ -22,8 +23,12 @@ bash preparar-demo.sh
 cd demo-ramas
 ```
 
-El script borra y rehace `demo-ramas/` cada vez, con su propia identidad de Git: no toca
-ningún repositorio tuyo y se puede repetir.
+El script devuelve `demo-ramas/` a su estado de partida cada vez: le saca el `.git` y los
+archivos que hayas creado. Se puede repetir las veces que haga falta.
+
+**Corré el script también al terminar la clase**, antes de commitear este repositorio.
+`demo-ramas` vive adentro del repo de la clase: si se queda con su `.git` propio, Git la guarda
+como un puntero vacío y en GitHub se ve una carpeta gris que no se puede abrir.
 
 ## Qué debería verse
 

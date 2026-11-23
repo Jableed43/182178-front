@@ -49,3 +49,10 @@ volvés a correr y seguís.
 Está en `EJERCICIO-creando-realidades-alternativas`, pero **no se hace dentro de esa carpeta**:
 se hace en tu propio repositorio, el `mi-primer-repo` de la clase pasada. Termina publicando el
 sitio en **GitHub Pages**, y ese enlace es el entregable.
+
+## Un extra: el post mortem
+
+`POSTMORTEM-la-carpeta-gris.md` cuenta un error real que tuvo este repositorio preparando la
+clase: una carpeta que en GitHub aparecía en gris y llegaba vacía al clonar. Explica qué pasa
+cuando un repositorio de Git queda adentro de otro, y `git rm --cached`. No es obligatorio,
+pero es la clase de problema que te vas a encontrar trabajando.
