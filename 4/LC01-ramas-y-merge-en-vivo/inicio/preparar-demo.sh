@@ -3,7 +3,7 @@
 set -e
 DEMO="demo-ramas"
 rm -rf "$DEMO" && mkdir "$DEMO" && cd "$DEMO"
-git init -q -b master
+git init -q -b main
 git config user.name "Demo"
 git config user.email "demo@example.com"
 # En Windows, sin esto Git avisa "LF will be replaced by CRLF" y tapa la salida
