@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia y embebidos</title>
+</head>
+<body>
+    <h1>Multimedia en HTML5</h1>
+
+    <h2>Imagen con propósito</h2>
+    <figure>
+        <img src="https://mdn.github.io/shared-assets/images/examples/grapefruit-slice.jpg"
+             alt="Rodaja de pomelo rosado cortada por la mitad, vista de cerca" width="280">
+        <figcaption>Una rodaja de pomelo. Probá cambiarle una letra al src: donde estaba la foto
+        aparece el texto del alt.</figcaption>
+    </figure>
+
+    <h2>Audio</h2>
+    <audio controls>
+        <source src="https://mdn.github.io/shared-assets/audio/t-rex-roar.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <h2>Video</h2>
+    <video controls width="400">
+        <source src="https://mdn.github.io/shared-assets/videos/flower.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+
+    <!-- Video de fondo: sin controles, mudo y en bucle (autoplay exige muted en Chrome/Safari) -->
+    <h3>Video automático</h3>
+    <video width="200" autoplay muted loop>
+        <source src="https://mdn.github.io/shared-assets/videos/flower.mp4" type="video/mp4">
+    </video>
+
+    <h2>Iframes: ventanas a otras páginas</h2>
+    <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.40%2C-34.62%2C-58.36%2C-34.59&amp;layer=mapnik"
+        width="400" height="300" title="Mapa del centro de Buenos Aires" loading="lazy"></iframe>
+
+    <iframe
+        src="https://www.youtube.com/embed/jNQXAC9IVRw"
+        width="400" height="300" title="Video de YouTube" allowfullscreen loading="lazy"></iframe>
+</body>
+</html>

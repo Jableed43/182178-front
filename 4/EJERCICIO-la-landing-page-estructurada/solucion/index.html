@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Salud Integral</title>
+</head>
+<body>
+    <header>
+        <h1>Consultorio Salud Integral</h1>
+        <nav aria-label="Navegación principal">
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#turnos">Turnos</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- article: se entiende solo, incluso fuera de esta página -->
+        <article id="nosotros">
+            <h2>Quiénes somos</h2>
+            <p>
+                Atendemos clínica médica, pediatría y kinesiología desde 1998, con turnos
+                programados y guardia de lunes a sábado.
+            </p>
+        </article>
+
+        <section id="contacto">
+            <h2>Dónde estamos</h2>
+            <p>Av. Siempreviva 742, Rosario.</p>
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-60.68%2C-32.96%2C-60.62%2C-32.92&amp;layer=mapnik"
+                width="400" height="300" title="Mapa del consultorio" loading="lazy"></iframe>
+        </section>
+        <section id="video">
+            <h2>Conocé el consultorio</h2>
+            <iframe
+                src="https://www.youtube.com/embed/jNQXAC9IVRw"
+                width="400" height="300" title="Recorrido por el consultorio"
+                allowfullscreen loading="lazy"></iframe>
+        </section>
+        <section id="turnos">
+            <h2>Reservá tu turno</h2>
+
+            <form action="/turnos" method="POST">
+                <label for="paciente">Nombre del paciente:</label>
+                <input type="text" id="paciente" name="paciente" required minlength="3">
+                <br><br>
+
+                <label for="correo">Email:</label>
+                <input type="email" id="correo" name="email" required>
+                <br><br>
+
+                <label for="fecha">Fecha del turno:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <br><br>
+
+                <!-- Mismo name: por eso se excluyen entre sí -->
+                <fieldset>
+                    <legend>Franja horaria</legend>
+                    <input type="radio" id="manana" name="franja" value="manana" required>
+                    <label for="manana">Mañana</label>
+                    <input type="radio" id="tarde" name="franja" value="tarde">
+                    <label for="tarde">Tarde</label>
+                </fieldset>
+                <br>
+
+                <button type="submit">Solicitar Turno</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Consultorio Salud Integral — Av. Siempreviva 742, Rosario — (0341) 555-0100</p>
+    </footer>
+</body>
+</html>

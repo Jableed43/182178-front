@@ -1,8 +1,9 @@
-# Clase 4 - Git avanzado: ramas y colaboración
+# Clase 5 - HTML semántico, formularios y multimedia
 
-Segunda clase de Git. La primera fue el flujo básico: `add`, `commit`, `push`. Esta es la que
-usás todos los días en un equipo: **ramas**, fusionarlas, resolver un conflicto, y qué no subir
-nunca.
+La clase que **cierra HTML**: la próxima empieza CSS.
+
+Tres cosas: dejar de usar `div` para todo, armar un formulario que el navegador valide solo, y
+meter imágenes, audio, video y mapas en una página.
 
 Las carpetas se llaman igual que los títulos de las slides. En cada una:
 
@@ -10,49 +11,45 @@ Las carpetas se llaman igual que los títulos de las slides. En cada una:
 - `solucion/` — el mismo ya terminado, para comparar.
 - `README.md` — los 4 pasos de esa slide.
 
-| Carpeta | Slide | Archivos |
+| Carpeta | Slide | Archivo |
 | :--- | :--- | :--- |
-| `LC01-ramas-y-merge-en-vivo` | Ramas y merge en vivo | `preparar-demo.sh`, `guion-comandos.md` |
-| `LC02-resolve-un-conflicto-de-fusion-en-vivo` | Resolvé un conflicto de fusión en vivo | `armar-conflicto.sh`, `index.resuelto.html` |
-| `LC03-gitignore-y-stash-en-vivo` | .gitignore y stash en vivo | `preparar-demo.sh`, `.gitignore` |
-| `EJERCICIO-creando-realidades-alternativas` | Creando realidades alternativas | `galeria.html`, `pasos.md` |
+| `LC01-de-div-a-etiquetas-semanticas` | De div a etiquetas semánticas | `index.html` |
+| `LC02-arma-un-formulario-con-validaciones` | Armá un formulario con validaciones | `formulario.html` |
+| `LC03-imagenes-audio-video-e-iframe` | Imágenes, audio, video e iframe | `multimedia.html` |
+| `EJERCICIO-la-landing-page-estructurada` | La landing page estructurada | `index.html` + `pasos.md` |
 
-## Cómo se corre cada demo
+## Cómo se abre cada archivo
 
-Cada live coding trae un script que arma el repositorio de práctica. Desde Git Bash:
+Clic derecho sobre el `.html` → **Open with Live Server**. Así se recarga solo cada vez que
+guardás.
 
-```bash
-cd LC01-ramas-y-merge-en-vivo/solucion
-bash preparar-demo.sh
-cd demo-ramas
-```
+Si abrís el archivo con doble clic también funciona, pero tenés que recargar a mano con F5.
 
-Los scripts **borran y rehacen** su carpeta cada vez, con su propia identidad de Git. No tocan
-ningún repositorio tuyo y los podés correr las veces que quieras. Si algo se desarma, lo
-volvés a correr y seguís.
+**El LC 3 necesita internet**: la imagen, el audio, el video, el mapa y el video de YouTube se
+cargan de direcciones públicas.
 
-## Cuatro cosas para no olvidarse
+## Cinco cosas para no olvidarse
 
-- **Una rama es un universo paralelo.** Cuando cambiás de rama, los archivos de la carpeta
-  cambian: lo que creaste en una no está en la otra hasta que las fusionás.
-- **Un conflicto no es un error.** Es Git diciendo "dos personas cambiaron la misma línea,
-  decidí vos". Las marcas `<<<<<<<`, `=======` y `>>>>>>>` no son código: son la pregunta.
-  Resolver es borrarlas y dejar el texto final.
-- **El `.gitignore` no saca lo que ya está commiteado.** Sólo evita que entre lo que todavía no
-  entró. Por eso se escribe al empezar el proyecto, no después.
-- **Git te frena si vas a perder trabajo.** Si cambiás de rama con cambios sin commitear que la
-  otra rama pisaría, no te deja. Ahí entra `git stash`: guarda el trabajo a medias en un cajón,
-  te deja la carpeta limpia, y con `git stash pop` lo recuperás.
+- **`article` es independiente, `section` agrupa.** La pregunta que lo decide: ¿se entiende solo
+  si lo compartís por WhatsApp? Entonces es `article`.
+- **El `for` del label y el `id` del input tienen que ser idénticos.** Si lo son, al tocar el
+  texto de la etiqueta el cursor salta al campo. Es la prueba de que quedó bien.
+- **Sin `name`, el dato no viaja.** El campo se ve, se completa, se envía… y llega vacío. No hay
+  ningún error: es el bug más difícil de encontrar de un formulario.
+- **GET muestra todo en la barra de direcciones.** Por eso un login o una tarjeta nunca van por
+  GET.
+- **El `alt` nunca va vacío.** Es lo que se ve si la foto no carga y lo único que escucha una
+  persona ciega.
+
+Y una que no se ve: **la validación del navegador no es una defensa**. Se saltea en dos clics
+desde las DevTools. El servidor siempre tiene que volver a validar.
 
 ## El ejercicio
 
-Está en `EJERCICIO-creando-realidades-alternativas`, pero **no se hace dentro de esa carpeta**:
-se hace en tu propio repositorio, el `mi-primer-repo` de la clase pasada. Termina publicando el
-sitio en **GitHub Pages**, y ese enlace es el entregable.
+Está en `EJERCICIO-la-landing-page-estructurada`, con la consigna paso a paso en `pasos.md`:
+una landing de consultorio que junta las tres cosas de la clase. En `solucion/` está terminada,
+para mirar **después** de intentarla.
 
-## Un extra: el post mortem
-
-`POSTMORTEM-la-carpeta-gris.md` cuenta un error real que tuvo este repositorio preparando la
-clase: una carpeta que en GitHub aparecía en gris y llegaba vacía al clonar. Explica qué pasa
-cuando un repositorio de Git queda adentro de otro, y `git rm --cached`. No es obligatorio,
-pero es la clase de problema que te vas a encontrar trabajando.
+Se corrige por cinco cosas: ningún `div` en el esqueleto, la presentación en `article`, cada
+`input` con su `label` vinculado y su `name`, los dos radios con el mismo `name`, y los `iframe`
+con `title`.

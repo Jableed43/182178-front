@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al curso</title>
+</head>
+<body>
+    <h1>Inscripción al curso</h1>
+
+    <!-- action: a dónde viajan los datos. method: cómo viajan (POST = ocultos, GET = en la URL) -->
+    <form action="/inscripcion" method="POST">
+
+        <!-- El atributo "for" tiene que ser IDÉNTICO al "id" del input -->
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required minlength="3">
+        <br><br>
+
+        <label for="correo">Email:</label>
+        <input type="email" id="correo" name="email" required>
+        <br><br>
+
+        <label for="edad">Edad (18 a 99):</label>
+        <input type="number" id="edad" name="edad" min="18" max="99">
+        <br><br>
+
+        <label for="telefono">Teléfono (10 dígitos):</label>
+        <input type="text" id="telefono" name="telefono" pattern="[0-9]{10}" title="Diez números, sin espacios">
+        <br><br>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" required minlength="8">
+        <br><br>
+
+        <label for="inicio">Fecha de inicio:</label>
+        <input type="date" id="inicio" name="inicio">
+        <br><br>
+
+        <label for="curso">Curso:</label>
+        <select id="curso" name="curso">
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+        </select>
+        <br><br>
+
+        <!-- Radios: mismo name para que se excluyan entre sí -->
+        <fieldset>
+            <legend>Turno</legend>
+            <input type="radio" name="turno" id="manana" value="manana" checked>
+            <label for="manana">Mañana</label>
+            <input type="radio" name="turno" id="noche" value="noche">
+            <label for="noche">Noche</label>
+        </fieldset>
+        <br>
+
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+        <br><br>
+
+        <input type="checkbox" id="acepto" name="acepto" required>
+        <label for="acepto">Acepto los términos y condiciones</label>
+        <br><br>
+
+        <button type="submit">Enviar inscripción</button>
+    </form>
+</body>
+</html>
