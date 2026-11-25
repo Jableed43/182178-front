@@ -8,6 +8,64 @@
 <body>
     <h1>Inscripción al curso</h1>
 
+    <form action="/inscripcion" method="post">
+            <!-- Los campos, en orden:                                                      -->
+    <!--    nombre     text,     required, minlength 3                              -->
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required minlength="3">
+        <br>
+    <!--    email      email,    required                                           -->
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+    <!--    edad       number,   min 18, max 99                                     -->
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" min="18" max="99">
+        <br>
+    <!--    telefono   text,     pattern de 10 dígitos                              -->
+        <label for="telefono">Telefono</label>
+        <input type="text" id="telefono" name="telefono" pattern="[0-9]{10}">
+        <br>
+    <!--    clave      password, required, minlength 8                              -->
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" required minlength="8">
+        <br>
+    <!--    inicio     date                                                         -->
+        <label for="inicio">Fecha de inicio</label>
+        <input type="date" id="inicio" name="inicio">
+        <br>
+    <!--    curso      select con dos option                                        -->
+        <label for="curso">Curso</label>
+        <select name="curso" id="curso">
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+        </select>
+    <!--    turno      dos radio con el MISMO name, dentro de fieldset + legend     -->
+        <fieldset>
+            <legend>Turno</legend>
+
+            <input type="radio" name="turno" id="manana" value="manana" checked>
+            <label for="manana">mañana</label>
+
+            <input type="radio" name="turno" id="noche" value="noche">
+            <label for="noche">noche</label>
+        </fieldset>
+
+
+    <!--    comentarios textarea                                                    -->
+        <label for="comentarios">Comentarios:</label>
+        <textarea name="comentarios" id="comentarios" rows="4" cols="40" ></textarea>
+
+        <br>
+
+        <input type="checkbox" id="acepto" name="acepto" required>
+        <label for="acepto">Acepto los terminos y condiciones</label>
+
+        <br><br>
+
+        <button type="submit">Enviar inscripcion</button>
+    </form>
+
     <!-- action: a dónde viajan los datos. method: cómo viajan (POST = ocultos, GET = en la URL) -->
 <!-- TODO (Live Coding): Armá el form con action="/inscripcion" y method="POST"; cada campo con su label vinculado, su name y su validación -->
     <!-- 1. Abrí el form:  <form action="/inscripcion" method="POST">            -->
